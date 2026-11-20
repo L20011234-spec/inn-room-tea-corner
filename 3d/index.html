@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6f4ed">
+  <title>客房三维模型 · 窗前茶吧</title>
+  <link rel="stylesheet" href="room.css">
+  <script defer src="room.min.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <a class="back" href="../index.html"><span aria-hidden="true">←</span> 返回首页</a>
+      <h1>客房三维模型</h1>
+      <span class="project">窗前茶吧</span>
+    </header>
+    <section class="viewer" aria-label="开顶客房三维视图">
+      <div class="viewport" id="viewport">
+        <canvas id="canvas" tabindex="0" aria-label="客房三维视图" aria-describedby="help"></canvas>
+        <div id="state" class="state">
+          <div class="notice" role="status" aria-live="polite">
+            <p id="message">正在加载客房模型…</p>
+            <progress id="progress" aria-label="模型加载进度"></progress>
+            <div class="recovery" id="recovery" hidden>
+              <button type="button" id="retry" hidden>重新加载</button>
+              <button type="button" id="open-model" hidden>选择模型文件</button>
+              <input type="file" id="local-file" accept=".glb,model/gltf-binary" hidden>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bar">
+        <div class="instructions" id="help">
+          <p class="desktop">拖动旋转，滚轮缩放，右键拖动平移。</p>
+          <p class="mobile">单指旋转，双指捏合缩放，双指同向拖动平移。</p>
+          <small>键盘可用方向键旋转，Shift ＋ 方向键平移，R 复位。</small>
+        </div>
+        <div class="controls" aria-label="视角控制">
+          <div class="pair">
+            <button type="button" data-action="left" aria-label="向左旋转" disabled>左转</button>
+            <button type="button" data-action="right" aria-label="向右旋转" disabled>右转</button>
+          </div>
+          <div class="pair">
+            <button type="button" data-action="out" aria-label="缩小" disabled>−</button>
+            <button type="button" data-action="in" aria-label="放大" disabled>＋</button>
+          </div>
+          <button class="reset" type="button" data-action="reset" disabled>重置视角</button>
+        </div>
+      </div>
+    </section>
+    <noscript>请启用浏览器 JavaScript 以旋转和缩放三维模型。</noscript>
+  </main>
+</body>
+</html>

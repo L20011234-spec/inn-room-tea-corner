@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="浏览窗前茶吧民宿客房的效果图和可旋转空间模型。">
+  <title>窗前茶吧｜民宿客房</title>
+  <link rel="stylesheet" href="./site.css">
+  <script defer src="./gallery.js"></script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="shell header-inner">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">室</span><span>民宿客房</span></a>
+      <nav aria-label="展示导航">
+        <a href="./3d/">交互 3D</a>
+        <a class="gallery-nav" href="#gallery">效果图</a>
+        <a href="./assets/guestroom-originals.zip" download="民宿客房效果图.zip">原图下载</a>
+      </nav>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="intro" aria-labelledby="project-title">
+      <div>
+        <h1 id="project-title">窗前茶吧</h1>
+        <p>灰蓝一体床靠、暖米墙面和窗前单人茶席。<br class="description-break">浅米灰茶桌沿电视墙布置，米色椭圆凳朝向入户门。</p>
+      </div>
+      <a class="primary" href="./3d/">进入交互 3D</a>
+    </section>
+    <section id="gallery" aria-label="客房效果图">
+      <a class="shot cover" href="./assets/room-overall.jpg" data-shot="view-room">
+        <div class="frame"><img src="./assets/room-overall.jpg" width="1920" height="1280" alt="客房全景，灰蓝床靠和电视墙窗边的茶桌与椭圆凳同框" fetchpriority="high"></div>
+        <div class="caption"><div><h2>客房整体</h2><p>床区与窗前茶吧的相对位置</p></div><span class="action">查看大图</span></div>
+      </a>
+      <div class="photo-grid">
+        <a class="shot" href="./assets/tea-corner.jpg" data-shot="view-tea">
+          <div class="frame"><img src="./assets/tea-corner.jpg" width="1600" height="1200" alt="茶桌长边靠电视墙，米色椭圆凳在窗前" loading="lazy" decoding="async"></div>
+          <div class="caption"><div><h2>窗前茶吧</h2><p>方角薄台面、深木侧板和椭圆凳</p></div><span class="action">查看大图</span></div>
+        </a>
+        <a class="shot" href="./assets/entrance.jpg" data-shot="view-entry">
+          <div class="frame"><img src="./assets/entrance.jpg" width="1600" height="1200" alt="入户门与卫浴外侧行李架" loading="lazy" decoding="async"></div>
+          <div class="caption"><div><h2>入户与卫浴</h2><p>入户挂钩、行李架与床尾动线</p></div><span class="action">查看大图</span></div>
+        </a>
+        <a class="shot" href="./assets/room-night.jpg" data-shot="view-night">
+          <div class="frame"><img src="./assets/room-night.jpg" width="1600" height="1200" alt="夜间灰蓝床靠、上沿暖光及双侧阅读灯" loading="lazy" decoding="async"></div>
+          <div class="caption"><div><h2>夜间灯光</h2><p>床靠上沿暖光与双侧阅读灯</p></div><span class="action">查看大图</span></div>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer class="shell site-footer">
+    <span>民宿客房 · 窗前茶吧</span>
+    <a href="./assets/guestroom-originals.zip" download="民宿客房效果图.zip">下载 4 张原图</a>
+  </footer>
+  <dialog class="lightbox" aria-labelledby="lightbox-title">
+    <div class="lightbox-bar">
+      <h2 id="lightbox-title"></h2>
+      <button type="button" class="lightbox-close" aria-label="关闭大图">关闭</button>
+    </div>
+    <div class="lightbox-stage"><img alt=""></div>
+    <div class="lightbox-controls" aria-label="图片操作">
+      <button type="button" class="prev">上一张</button>
+      <span class="position" aria-live="polite"></span>
+      <button type="button" class="next">下一张</button>
+      <a class="lightbox-download" download>下载原图</a>
+    </div>
+  </dialog>
+</body>
+</html>

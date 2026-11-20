@@ -1,0 +1,77 @@
+:root {
+  color: #263c35;
+  background: #f3f5f2;
+  font-family: "Microsoft YaHei UI", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-serif;
+  --paper: #f3f5f2;
+  --ink: #263c35;
+  --muted: #52675e;
+  --line: #cdd8d1;
+  --action: #31564a;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 1rem; }
+body { margin: 0; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid #378472; outline-offset: 4px; }
+.shell { max-width: 1496px; margin: 0 auto; padding-inline: 3rem; }
+.site-header { border-bottom: 1px solid var(--line); }
+.header-inner { min-height: 5.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; }
+.brand { display: inline-flex; align-items: center; gap: .75rem; font-weight: 650; white-space: nowrap; }
+.brand-mark { display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border: 1px solid var(--ink); font-size: 1.08rem; }
+nav { display: flex; align-items: center; gap: 1.7rem; font-size: .95rem; }
+nav a, .site-footer a { padding-block: .5rem; }
+nav a:hover, .site-footer a:hover { text-decoration: underline; text-underline-offset: .32rem; }
+.intro { display: flex; justify-content: space-between; align-items: end; gap: 2.5rem; padding-block: 3.7rem 2.65rem; }
+h1, h2, p { margin: 0; }
+h1 { font-size: clamp(2.8rem, 6.4vw, 5.3rem); line-height: 1.03; letter-spacing: -.055em; font-weight: 680; }
+.intro p { margin-top: 1.12rem; color: var(--muted); line-height: 1.8; font-size: 1.05rem; }
+.primary { display: grid; place-items: center; min-height: 3.5rem; min-width: 11rem; padding: .75rem 1.25rem; background: var(--ink); color: #fff; font-weight: 650; transition: background .18s ease; }
+.primary:hover { background: var(--action); }
+.shot { display: block; min-width: 0; }
+.frame { position: relative; overflow: hidden; aspect-ratio: 3 / 2; background: #e1e7e1; }
+.frame img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .26s ease; }
+.photo-grid .frame img { object-position: center 55%; }
+.shot:hover img { transform: scale(1.016); }
+.caption { min-height: 5rem; padding-block: .9rem; display: flex; align-items: start; justify-content: space-between; gap: .8rem; border-bottom: 1px solid var(--line); }
+.caption h2 { font-size: 1.12rem; font-weight: 650; line-height: 1.5; }
+.caption p { color: var(--muted); margin-top: .28rem; line-height: 1.6; font-size: .88rem; }
+.action { color: var(--action); flex: none; align-self: center; font-size: .88rem; }
+.shot:hover .action { text-decoration: underline; text-underline-offset: .3rem; }
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+.site-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; color: var(--muted); padding-block: 2rem 2.5rem; font-size: .93rem; }
+
+.lightbox { max-width: none; max-height: none; width: 100%; height: 100%; margin: 0; padding: 0; border: 0; background: #17221ef5; color: #fff; }
+.lightbox::backdrop { background: #17221e; }
+.lightbox[open] { display: flex; flex-direction: column; }
+.lightbox-bar, .lightbox-controls { display: flex; align-items: center; padding: .68rem max(1rem, 3vw); gap: .65rem; }
+.lightbox-bar { justify-content: space-between; }
+.lightbox-bar h2 { font-size: 1.05rem; font-weight: 650; }
+.lightbox-controls { flex-wrap: wrap; justify-content: center; }
+.lightbox-stage { display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); place-items: center; flex: 1; min-height: 0; padding-inline: 1rem; overflow: hidden; }
+.lightbox-stage img { display: block; min-height: 0; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.lightbox button, .lightbox-download { color: #fff; background: transparent; border: 1px solid #738e83; border-radius: 0; padding: .55rem .75rem; min-height: 2.75rem; cursor: pointer; font-size: .93rem; }
+.lightbox button:hover, .lightbox-download:hover { background: #31564a; }
+.position { min-width: 3rem; text-align: center; font-size: .86rem; color: #d1e2d8; }
+body:has(.lightbox[open]) { overflow: hidden; }
+
+@media (max-width: 760px) {
+  .shell { padding-inline: 1.125rem; }
+  .header-inner { min-height: 4.625rem; }
+  .brand { gap: .5rem; font-size: .95rem; }
+  .brand-mark { width: 2rem; height: 2rem; }
+  nav { gap: .95rem; font-size: .88rem; }
+  .gallery-nav { display: none; }
+  .intro { flex-direction: column; align-items: stretch; gap: 1.25rem; padding-block: 2.2rem 1.7rem; }
+  .intro p { margin-top: .85rem; font-size: 1rem; }
+  .description-break { display: none; }
+  .photo-grid { grid-template-columns: 1fr; gap: 1.45rem; margin-top: 1.6rem; }
+  .caption { min-height: 4.65rem; }
+  .site-footer { padding-block: 1.5rem 1.8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frame img, .primary { transition: none; }
+}
